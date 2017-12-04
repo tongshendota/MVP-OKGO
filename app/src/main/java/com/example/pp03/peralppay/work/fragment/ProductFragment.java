@@ -70,8 +70,8 @@ public class ProductFragment extends BaseFragment implements IProductView{
     public void initData() {
         list = new ArrayList<>();
 
-        iGetDataPresenterCompl.getHoData(gethordata());
-        iGetDataPresenterCompl.getData(getdata());
+        iGetDataPresenterCompl.getHoData("");
+        iGetDataPresenterCompl.getData("");
         orderAdapter = new order_adapter(getContext());
         listView.setAdapter(orderAdapter);
         orderAdapter.setData(list);
@@ -102,7 +102,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
         horizontall.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                iGetDataPresenterCompl.getData(getdata());
+                iGetDataPresenterCompl.getData("");
             }
         });
         clear.setOnClickListener(new View.OnClickListener() {
@@ -127,30 +127,30 @@ public class ProductFragment extends BaseFragment implements IProductView{
         horizontall = (HorizontalListView)rootView.findViewById(R.id.horizontall);
         iGetDataPresenterCompl = new IGetDataPresenterCompl(ProductFragment.this,getActivity());
     }
-   public String getdata(){
-       gridlist = new ArrayList<>();
-       Random random = new Random();
-       int a=random.nextInt(10);
-       for(int i =0;i<20;i++){
-           MenuBean  menuBean = new MenuBean();
-           menuBean.setRemark(1);
-           menuBean.setName("辣椒炒肉"+a);
-           menuBean.setImg("http%3A%2F%2Fali.xinshipu.cn%2F20120703%2Foriginal%2F1341323816178.jpg");
-           menuBean.setMoneny(20.00+a);
-           gridlist.add(menuBean);
-       }
-       return gridlist.toString();
-   }
-   public String gethordata(){
-
-       Hor_list = new ArrayList<>();
-       for(int i = 0;i<10;i++){
-           Random random = new Random();
-           int a=random.nextInt(10);
-           Hor_list.add("湘菜"+a);
-       }
-       return Hor_list.toString();
-   }
+//   public String getdata(){
+//       gridlist = new ArrayList<>();
+//       Random random = new Random();
+//       int a=random.nextInt(10);
+//       for(int i =0;i<20;i++){
+//           MenuBean  menuBean = new MenuBean();
+//           menuBean.setRemark(1);
+//           menuBean.setName("辣椒炒肉"+a);
+//           menuBean.setImg("http%3A%2F%2Fali.xinshipu.cn%2F20120703%2Foriginal%2F1341323816178.jpg");
+//           menuBean.setMoneny(20.00+a);
+//           gridlist.add(menuBean);
+//       }
+//       return gridlist.toString();
+//   }
+//   public String gethordata(){
+//
+//       Hor_list = new ArrayList<>();
+//       for(int i = 0;i<10;i++){
+//           Random random = new Random();
+//           int a=random.nextInt(10);
+//           Hor_list.add("湘菜"+a);
+//       }
+//       return Hor_list.toString();
+//   }
     @Override
     public void onClick(View v) {
 
@@ -189,9 +189,11 @@ public class ProductFragment extends BaseFragment implements IProductView{
     }
 
     @Override
-    public void onGetDataResult(Boolean result, int code, String pare) {
+    public void onGetDataResult(Boolean result, int code, List<MenuBean> pare) {
         if (result) {
             Toast.makeText(getActivity(), "数据获取成功", Toast.LENGTH_SHORT).show();
+            gridlist = new ArrayList<>();
+            gridlist.addAll(pare);
             Message message = new Message() ;
             message.what=1;
             handler.sendMessage(message);
@@ -201,9 +203,11 @@ public class ProductFragment extends BaseFragment implements IProductView{
     }
 
     @Override
-    public void onGetHoDataResult(Boolean result, int code, String pare) {
+    public void onGetHoDataResult(Boolean result, int code, List<String> pare) {
         if (result) {
             Toast.makeText(getActivity(), "数据获取成功", Toast.LENGTH_SHORT).show();
+            Hor_list = new ArrayList<>();
+            Hor_list.addAll(pare);
             Message message = new Message() ;
             message.what=2;
             handler.sendMessage(message);

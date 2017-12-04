@@ -56,7 +56,6 @@ public class menu_adapter extends BaseAdapter{
         } else {
             holder = (Holder) convertView.getTag();
         }
-
         GlideUtils.showImageView(context,R.mipmap.xx,list.get(position).getImg(),holder.img);
         holder.name.setText(list.get(position).getName());
         return convertView;
