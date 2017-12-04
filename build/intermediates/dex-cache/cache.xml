@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\SDK\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.0-alpha1_a37fcc1c2dd8cccb8456557b30a1911d95fab1c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\a3902f00c87686de74b4a2e639967c68cea7d05a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fa844e14094002ef5bf50574ad276c0f46484e30\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\5b9513444f3bcaf5da99c0aed9066c0de971fb52\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_728ef1a151758f5f30a149a273f3c52063198bf7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\0f4b9bea88c1fbb8a43fb53d3f3c18d74242ca32\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_80b6a0e8be7cd2fafb68cebbbea7e9e9f8dbd396\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\8bb927d430ee9a0cbead580516b5d0411c945dad\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_80dac345e57e2fd12be9ec164e1b96dec7c82395\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\6d6378d67f68c6187f24ac32c5cba48a30041012\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6b583ac806a6bcb530984eed0050ad571e500cbd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\d21fe969e981ac38b1890bdc50810822590b968a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_797593ff5eb3c38add5ea001061a649757e58a3a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Demo\Peralppay\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a37a76d4c8f40fd0b4624bf5d194ca50928564a8">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8c943e7584de7fc4ef25994ddd3ef7848f68ec1f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\794f60c02f9179fee2027d6c51ed2ca0192405e3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5525b8eac3fdfb3ba509ca50e3de0e4ed40f3cf2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\3dca68da4d84807a875c27e75d69ba7b967b8a34\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8c232188b3028f8e6f7b932b1d44dc7c88dc65a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Demo\Peralppay\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_82c1597dac18ea344d1d719929e0c244b690c282\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\ce16634babefbb20cd7ae3da12e3ed5a82cbd0e2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1e8fcba3accebb791ad4c2d27387f68d26e69b6d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\c8fb68844f3df78b6221e516a028f48068545f56\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1a0fb724e626a8c2e5583288127792a86ba6b7e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.8.1\bc373fb6bc7bca3035041b924f158fd2b946ee8d\butterknife-annotations-8.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc373fb6bc7bca3035041b924f158fd2b946ee8d">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.8.1_13b26ab69d9878d78c9b20d2f400d3f15153502e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Demo\Peralppay\app\libs\lib_fastjson-1.1.34.android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="29ee00ca4f0b78f2c1ac9d61b78b9bb3f495715c">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\2\lib_fastjson-1.1.34.android_f485b4881323374c43a635170a5a43d60778c81d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\bc525742c3f1abcc1fc2b772f725beda19d8fd49\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ee77ff1d7d66ac1318320c012290952ececc5b57\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\c9f2929f83972b73a543d6ee93a9d894d4247097\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_39f04f5f67f69aae728b251e90116e4f43bd1127\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\edc1e0a10b2b2ff5c697e85b41fe50757623c108\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f52ef9414657ef7a41d9d07a691025aa756bc3ff\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_d573760ead3216a5cc2d1e922f713bd8454b87f7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\pp03\.android\build-cache\63efdd70837eb668efde337365178c28058a4352\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e07f6284e6b875e39eb84d158c5eaba9ca369e0c\classes.dex" />
+    </item>
+
+</items>

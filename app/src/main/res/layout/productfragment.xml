@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+       <LinearLayout
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:layout_marginRight="1dp"
+           >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="48dp"
+              android:orientation="horizontal"
+              android:background="@color/background"
+              >
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/catering"
+                />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:text="黄金座位"
+                  android:gravity="center"
+                  android:textColor="@color/white"
+                  android:textStyle="bold"
+                  android:textSize="16sp"
+                  />
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@mipmap/del"
+                    android:layout_margin="5dp"
+                      android:id="@+id/clear"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentEnd="true" />
+
+              </RelativeLayout>
+
+          </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <ListView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/list"
+      android:divider="@null"
+       android:background="@color/color_f9f9f9"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentStart="true"></ListView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="下单"
+        android:background="@color/background"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
+
+
+       </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/background"
+            android:orientation="vertical"
+            >
+            <com.example.pp03.peralppay.utils.view.HorizontalListView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/horizontall"
+                android:divider="@color/white"
+                android:dividerHeight="1px"
+                >
+
+            </com.example.pp03.peralppay.utils.view.HorizontalListView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                ></View>
+            <GridView
+                android:id="@+id/grid_test"
+                android:numColumns="5"
+                android:horizontalSpacing="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </GridView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
