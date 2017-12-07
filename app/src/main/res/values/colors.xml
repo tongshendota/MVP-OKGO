@@ -9,4 +9,7 @@
     <color name="red">#FF3C38</color>
     <color name="black">#000000</color>
     <color name="color_f9f9f9">#f9f9f9</color>
+    <color name="yellow">#ff9900</color>
+
+    <color name="divider">#ffd2d2d2</color>
 </resources>

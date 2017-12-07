@@ -6,6 +6,7 @@ import android.os.Message;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -38,12 +39,13 @@ public class ProductFragment extends BaseFragment implements IProductView{
     ListView listView;
     IGetDataPresenterCompl iGetDataPresenterCompl;
     GridView grid_test;
+    private Button btn;
       private menu_adapter menuAdapter;
       private order_adapter orderAdapter;
      private ArrayList<MenuBean> list;
     private List<String> Hor_list;
     private ArrayList<MenuBean> gridlist;
-    private ImageView clear;
+//    private ImageView clear;
     private HorizontalListView horizontall;
     private HorizontallListviewAdapter adapter;
 
@@ -62,8 +64,29 @@ public class ProductFragment extends BaseFragment implements IProductView{
               adapter.setData(Hor_list);
           }
           if(msg.what==3){
-
+              list.clear();
+              list.addAll(orderAdapter.getdata());
+           if(btn!=null){
+               Double sum=0.00;
+               for(int i =0;i<list.size();i++){
+                   sum=sum+list.get(i).getSummoneny();
+               }
+              btn.setText(sum+"");
+           }
           }
+          if(msg.what==4){
+              list.clear();
+              list.addAll(orderAdapter.getdata());
+              if(btn!=null){
+                  Double sum=0.00;
+                  for(int i =0;i<list.size();i++){
+                      sum=sum+list.get(i).getSummoneny();
+                  }
+                  btn.setText(sum+"");
+              }
+              orderAdapter.setData(list);
+          }
+
         }
     };
     @Override
@@ -72,7 +95,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
 
         iGetDataPresenterCompl.getHoData("");
         iGetDataPresenterCompl.getData("");
-        orderAdapter = new order_adapter(getContext());
+        orderAdapter = new order_adapter(getContext(),handler);
         listView.setAdapter(orderAdapter);
         orderAdapter.setData(list);
         grid_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -84,19 +107,28 @@ public class ProductFragment extends BaseFragment implements IProductView{
                 for(int i =0;i<list.size();i++){
                     if(list.get(i).getName().equals(gridlist.get(position).getName())){
                         MenuBean menuBean = new MenuBean();
-                        menuBean.setMoneny(list.get(i).getMoneny()+gridlist.get(position).getMoneny());
+                        menuBean.setMoneny(gridlist.get(position).getMoneny());
                         menuBean.setImg(gridlist.get(position).getImg());
                         menuBean.setName(gridlist.get(position).getName());
-                        menuBean.setRemark(list.get(i).getRemark()+gridlist.get(position).getRemark());
+                        menuBean.setSize(list.get(i).getSize()+gridlist.get(position).getSize());
+                        menuBean.setRemark(gridlist.get(position).getRemark());
+                        menuBean.setSummoneny(list.get(i).getSummoneny()+gridlist.get(position).getMoneny());
                         list.remove(i);
                         list.add(i,menuBean);
                         orderAdapter.setData(list);
+                        Message message = new Message();
+                        message.what=3;
+                        handler.sendMessage(message);
                         return;
                     }
                 }
                        list.add(gridlist.get(position));
                 }
                 orderAdapter.setData(list);
+
+                Message message = new Message();
+                message.what=3;
+                handler.sendMessage(message);
             }
         });
         horizontall.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,13 +137,13 @@ public class ProductFragment extends BaseFragment implements IProductView{
                 iGetDataPresenterCompl.getData("");
             }
         });
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                list.clear();
-                orderAdapter.setData(list);
-            }
-        });
+//        clear.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                list.clear();
+//                orderAdapter.setData(list);
+//            }
+//        });
     }
 
     @Override
@@ -121,9 +153,9 @@ public class ProductFragment extends BaseFragment implements IProductView{
 
     @Override
     public void initUI() {
+        btn = (Button)rootView.findViewById(R.id.btn);
         listView = (ListView)rootView.findViewById(R.id.list);
         grid_test = (GridView)rootView.findViewById(R.id.grid_test);
-        clear = (ImageView)rootView.findViewById(R.id.clear);
         horizontall = (HorizontalListView)rootView.findViewById(R.id.horizontall);
         iGetDataPresenterCompl = new IGetDataPresenterCompl(ProductFragment.this,getActivity());
     }

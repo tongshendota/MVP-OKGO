@@ -1,17 +1,20 @@
 package com.example.pp03.peralppay.login;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dd.CircularProgressButton;
 import com.example.pp03.peralppay.work.MainActivity;
 import com.example.pp03.peralppay.R;
 import com.example.pp03.peralppay.login.presenter.ILoginPresenter;
@@ -33,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
     @BindView(R.id.et_login_password)
     EditText etLoginPassword;
     @BindView(R.id.btn_login_login)
-    Button btnLoginLogin;
+    CircularProgressButton btnLoginLogin;
     @BindView(R.id.find_pass)
     TextView find_pass;
     ILoginPresenter loginPresenter;
@@ -67,10 +70,18 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
     public void onLoginResult(Boolean result, int code) {
         btnLoginLogin.setEnabled(true);
         if (result) {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+            if (btnLoginLogin.getProgress() == 0) {
+                simulateSuccessProgress(btnLoginLogin);
+            } else {
+                btnLoginLogin.setProgress(0);
+            }
             Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
         } else {
+            if (btnLoginLogin.getProgress() == 0) {
+                simulateErrorProgress(btnLoginLogin);
+            } else {
+                btnLoginLogin.setProgress(0);
+            }
             Toast.makeText(this, "Login Fail, code=" + code, Toast.LENGTH_SHORT).show();
         }
     }
@@ -97,5 +108,47 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
             }
         }
         return super.onTouchEvent(event);
+    }
+    private void simulateSuccessProgress(final CircularProgressButton button) {
+        ValueAnimator widthAnimation = ValueAnimator.ofInt(1, 200);
+        widthAnimation.setDuration(1500);
+        widthAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        widthAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Integer value = (Integer) animation.getAnimatedValue();
+                if(value==200){
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    button.setProgress(0);
+                }else{
+                    button.setProgress(value);
+                }
+            }
+        });
+        widthAnimation.start();
+    }
+    private void simulateErrorProgress(final CircularProgressButton button) {
+        ValueAnimator widthAnimation = ValueAnimator.ofInt(1, 300);
+        widthAnimation.setDuration(1500);
+        widthAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        widthAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Integer value = (Integer) animation.getAnimatedValue();
+
+                if(value==300){
+                    button.setProgress(0);
+                }
+                else if (value >99) {
+                    button.setProgress(-1);
+                }else{
+                    button.setProgress(value);
+                }
+
+
+            }
+        });
+        widthAnimation.start();
     }
 }

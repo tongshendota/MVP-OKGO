@@ -8,7 +8,7 @@ import com.example.pp03.peralppay.GmApplication;
  */
 
 public class Url {
-    public static String Pay_url = "https://api.peralppay.com";
+    public static String Pay_url = "https://api.dev.peralppay.com";
     public static String getPay_url(String payAmount, String payType, String authCode){
         return Pay_url+"/api/offline/create_order_merch?payAmount="+payAmount+"&payType="+payType+"&lkey="+ GmApplication.getLkey()+"&authCode="+authCode;
     }

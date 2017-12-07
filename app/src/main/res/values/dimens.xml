@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="editext_height">48dp</dimen>
+    <dimen name="dimen_40dp">20dp</dimen>
     <dimen name="editext_wiht">200dp</dimen>
     <dimen name="text_size">16sp</dimen>
+    <dimen name="text_minsize">12sp</dimen>
 </resources>

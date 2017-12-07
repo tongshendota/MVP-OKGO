@@ -89,7 +89,7 @@ public class UserModel implements IUser {
             ToastUtil.showCustomToast("密码不能为空");
             return -1;
         }
-        if (password.length() != 6) {
+        if (password.length() < 6) {
             ToastUtil.showCustomToast("请填写正确的密码长度");
             return -1;
         }

@@ -1,5 +1,7 @@
 package com.example.pp03.peralppay.work;
 
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity
 //        toggle.syncState();
         initUI();
         navigationView.setNavigationItemSelectedListener(this);
+        Resources resource=(Resources)getBaseContext().getResources();
+        ColorStateList csl=(ColorStateList)resource.getColorStateList(R.color.white);
+        navigationView.setItemTextColor(csl);
     }
       private void initUI(){
           fragmentAdapter = new HomeFragmentAdapter(getSupportFragmentManager());
@@ -82,13 +87,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.orden) {
             changeFragment(0);
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.Mercancia) {
             changeFragment(1);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

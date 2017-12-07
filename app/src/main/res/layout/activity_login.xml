@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:background="@color/background"
@@ -90,14 +91,16 @@ android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <Button
+        <com.dd.CircularProgressButton
             android:id="@+id/btn_login_login"
             android:layout_width="@dimen/editext_wiht"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_shape"
             android:layout_weight="1"
             android:textColor="@color/white"
-            android:text="确认" />
+            app:cpb_textComplete="成功"
+            app:cpb_textError="失败"
+            app:cpb_textIdle="登陆"
+          />
 
     </LinearLayout>
 

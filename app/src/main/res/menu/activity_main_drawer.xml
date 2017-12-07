@@ -4,14 +4,23 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-
-            android:title="点餐" />
+            android:id="@+id/orden"
+             android:icon="@drawable/icon"
+            android:title="Orden" />
         <item
-            android:id="@+id/nav_gallery"
-
-            android:title="商品管理" />
+            android:id="@+id/Mercancia"
+            android:icon="@drawable/icon"
+            android:title="La Mercancia" />
+        <item
+            android:id="@+id/conciliacion"
+            android:icon="@drawable/icon"
+            android:title="La conciliacion" />
+        <item
+            android:id="@+id/siempre"
+            android:icon="@drawable/icon"
+            android:title="Siempre" />
     </group>
-
+      <item
+          android:title="Entrega de turno  》"></item>
 
 </menu>

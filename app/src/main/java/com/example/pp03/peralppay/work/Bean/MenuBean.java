@@ -8,7 +8,25 @@ public class MenuBean {
     private String name;
     private String img;
     private Double moneny;
-    private int remark;
+    private String remark;
+    private int size;
+    private Double summoneny;
+
+    public Double getSummoneny() {
+        return summoneny;
+    }
+
+    public void setSummoneny(Double summoneny) {
+        this.summoneny = summoneny;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 
     public Double getMoneny() {
         return moneny;
@@ -18,11 +36,11 @@ public class MenuBean {
         this.moneny = moneny;
     }
 
-    public int getRemark() {
+    public String getRemark() {
         return remark;
     }
 
-    public void setRemark(int remark) {
+    public void setRemark(String remark) {
         this.remark = remark;
     }
 
