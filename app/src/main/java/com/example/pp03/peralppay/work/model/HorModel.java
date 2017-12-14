@@ -28,11 +28,11 @@ public class HorModel implements IHorModel{
             menuBean.setRemark("多辣");
             menuBean.setName("辣椒炒肉"+a);
             menuBean.setSummoneny(20.00+a);
-            menuBean.setImg("http%3A%2F%2Fali.xinshipu.cn%2F20120703%2Foriginal%2F1341323816178.jpg");
-            menuBean.setMoneny(20.00+a);
-            menuBean.setSize(1);
-            list.add(menuBean);
-        }
+                menuBean.setImg("http%3A%2F%2Fali.xinshipu.cn%2F20120703%2Foriginal%2F1341323816178.jpg");
+                menuBean.setMoneny(20.00+a);
+                menuBean.setSize(1);
+                list.add(menuBean);
+            }
         return list;
     }
 

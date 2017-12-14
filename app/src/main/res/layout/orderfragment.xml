@@ -2,10 +2,150 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:text="我叫点餐"
-    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="10dp"
+                android:background="@color/color_f9f9f9"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:onClick="menu"
+                    android:src="@mipmap/menu" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/orden_management"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_moneny"
+                    android:textStyle="bold" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    >
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_btn_bg_color"
+                ></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/today"
+                android:id="@+id/today"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_moneny"
+                android:textColor="@color/text_color"
+                android:gravity="center|left"
+                android:paddingLeft="15dp"
+                android:drawableRight="@mipmap/img_arraw_right"
+                android:paddingRight="15dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/gray_btn_bg_color"
+                ></View>
+            <TextView   android:drawableRight="@mipmap/img_arraw_right"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/yesterday"
+                android:textStyle="bold"
+                android:id="@+id/yesterday"
+                android:textSize="@dimen/text_moneny"
+                android:textColor="@color/text_color"
+                android:gravity="center|left"
+                android:paddingLeft="15dp"
+                />         <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/gray_btn_bg_color"
+            ></View>
+            <TextView
+                android:id="@+id/longer"
+                android:drawableRight="@mipmap/img_arraw_right"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/longer"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_moneny"
+                android:textColor="@color/text_color"
+                android:gravity="center|left"
+                android:paddingLeft="15dp"
+                />         <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/gray_btn_bg_color"
+            ></View>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="48dp"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/gray_btn_bg_color"
+            ></View>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/color_f9f9f9"
+            android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        android:text=""
+        />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_btn_bg_color"></View>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vPager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:flipInterval="30"
+                android:persistentDrawingCache="animation" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

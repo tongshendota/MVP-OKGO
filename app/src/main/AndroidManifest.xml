@@ -30,6 +30,11 @@
         android:launchMode="singleTask"
         android:screenOrientation="landscape"
         ></activity>
+        <activity android:name=".work.Pay_Order_Activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>

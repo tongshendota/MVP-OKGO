@@ -2,12 +2,15 @@ package com.example.pp03.peralppay;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
 
 import com.example.pp03.peralppay.contacts.Contacts;
+import com.example.pp03.peralppay.utils.LocaleUtils;
 import com.example.pp03.peralppay.utils.SharedPreferencesUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -15,6 +18,7 @@ import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.cookie.store.PersistentCookieStore;
 
 import java.lang.reflect.Field;
+import java.util.Locale;
 import java.util.logging.Level;
 
 /**
@@ -36,7 +40,8 @@ public class GmApplication extends Application {
 
 //        initCloudChannel();
         getLkey();
-
+        Locale _UserLocale= LocaleUtils.getUserLocale(mContext);
+        LocaleUtils.updateLocale(this, _UserLocale);
     }
     public void setTypeface(){
         //华文彩云，加载外部字体assets/front/huawen_caiyun.ttf
@@ -139,5 +144,21 @@ public class GmApplication extends Application {
 
     public static void setLkey(String ck){
         lkey = ck;
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Locale _UserLocale=LocaleUtils.getUserLocale(mContext);
+        //系统语言改变了应用保持之前设置的语言
+        if (_UserLocale != null) {
+            Locale.setDefault(_UserLocale);
+            Configuration _Configuration = new Configuration(newConfig);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                _Configuration.setLocale(_UserLocale);
+            } else {
+                _Configuration.locale =_UserLocale;
+            }
+            getResources().updateConfiguration(_Configuration, getResources().getDisplayMetrics());
+        }
     }
 }

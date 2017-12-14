@@ -15,7 +15,7 @@
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="@dimen/editext_height"
-              android:text="账号"
+              android:text="@string/login_name"
               android:gravity="center"
               android:textStyle="bold"
               android:textColor="@color/white"
@@ -29,7 +29,7 @@
               android:gravity="center|left"
               android:padding="2dp"
               android:textSize="@dimen/text_size"
-              android:text="13189741011"
+              android:text="13111110000"
               android:background="@drawable/editext_shape"
              />
       </LinearLayout>
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/editext_height"
-            android:text="账号"
+            android:text="@string/login_pass"
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -75,7 +75,7 @@ android:layout_gravity="center"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="修改密码"
+        android:text="@string/updata_pass"
 
         android:textColor="@color/color_14AAE7"
         android:textSize="@dimen/text_size"
@@ -97,9 +97,9 @@ android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/white"
-            app:cpb_textComplete="成功"
-            app:cpb_textError="失败"
-            app:cpb_textIdle="登陆"
+            app:cpb_textComplete="@string/login_succes"
+            app:cpb_textError="@string/login_error"
+            app:cpb_textIdle="@string/login"
           />
 
     </LinearLayout>

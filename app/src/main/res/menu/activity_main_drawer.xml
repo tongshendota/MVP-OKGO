@@ -6,21 +6,22 @@
         <item
             android:id="@+id/orden"
              android:icon="@drawable/icon"
-            android:title="Orden" />
+            android:title="@string/point_collecting_silver" />
         <item
             android:id="@+id/Mercancia"
             android:icon="@drawable/icon"
-            android:title="La Mercancia" />
+            android:title="@string/orden_management" />
         <item
             android:id="@+id/conciliacion"
             android:icon="@drawable/icon"
-            android:title="La conciliacion" />
+            android:title="@string/reconciliation_of_data" />
         <item
             android:id="@+id/siempre"
             android:icon="@drawable/icon"
-            android:title="Siempre" />
+            android:title="@string/commodity_management" />
     </group>
-      <item
-          android:title="Entrega de turno  》"></item>
+    <item android:title="@string/general_setting"
+        android:id="@+id/setting"
+        ></item>
 
 </menu>

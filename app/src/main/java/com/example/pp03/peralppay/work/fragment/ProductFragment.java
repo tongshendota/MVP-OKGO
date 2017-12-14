@@ -1,24 +1,39 @@
 package com.example.pp03.peralppay.work.fragment;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pp03.peralppay.R;
 import com.example.pp03.peralppay.login.LoginActivity;
+import com.example.pp03.peralppay.utils.ToastUtil;
 import com.example.pp03.peralppay.utils.Url;
 import com.example.pp03.peralppay.utils.view.HorizontalListView;
 import com.example.pp03.peralppay.work.Bean.MenuBean;
 import com.example.pp03.peralppay.work.MainActivity;
+import com.example.pp03.peralppay.work.Pay_Order_Activity;
 import com.example.pp03.peralppay.work.adapter.HorizontallListviewAdapter;
 import com.example.pp03.peralppay.work.adapter.menu_adapter;
 import com.example.pp03.peralppay.work.adapter.order_adapter;
@@ -39,13 +54,16 @@ public class ProductFragment extends BaseFragment implements IProductView{
     ListView listView;
     IGetDataPresenterCompl iGetDataPresenterCompl;
     GridView grid_test;
-    private Button btn;
+    private TextView btn;
+    private ImageView setup;
       private menu_adapter menuAdapter;
       private order_adapter orderAdapter;
      private ArrayList<MenuBean> list;
     private List<String> Hor_list;
     private ArrayList<MenuBean> gridlist;
-//    private ImageView clear;
+    private LinearLayout btn_Linear;
+//    private View layout;
+//    private PopupWindow pop;
     private HorizontalListView horizontall;
     private HorizontallListviewAdapter adapter;
 
@@ -71,7 +89,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
                for(int i =0;i<list.size();i++){
                    sum=sum+list.get(i).getSummoneny();
                }
-              btn.setText(sum+"");
+              btn.setText("$"+sum+"");
            }
           }
           if(msg.what==4){
@@ -82,7 +100,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
                   for(int i =0;i<list.size();i++){
                       sum=sum+list.get(i).getSummoneny();
                   }
-                  btn.setText(sum+"");
+                  btn.setText("$"+sum+"");
               }
               orderAdapter.setData(list);
           }
@@ -92,7 +110,6 @@ public class ProductFragment extends BaseFragment implements IProductView{
     @Override
     public void initData() {
         list = new ArrayList<>();
-
         iGetDataPresenterCompl.getHoData("");
         iGetDataPresenterCompl.getData("");
         orderAdapter = new order_adapter(getContext(),handler);
@@ -137,13 +154,6 @@ public class ProductFragment extends BaseFragment implements IProductView{
                 iGetDataPresenterCompl.getData("");
             }
         });
-//        clear.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                list.clear();
-//                orderAdapter.setData(list);
-//            }
-//        });
     }
 
     @Override
@@ -153,72 +163,77 @@ public class ProductFragment extends BaseFragment implements IProductView{
 
     @Override
     public void initUI() {
-        btn = (Button)rootView.findViewById(R.id.btn);
+        setup = (ImageView)rootView.findViewById(R.id.setup);
+        btn = (TextView) rootView.findViewById(R.id.moneny);
         listView = (ListView)rootView.findViewById(R.id.list);
+        btn_Linear = (LinearLayout)rootView.findViewById(R.id.btn_Linear);
+        btn_Linear.setOnClickListener(this);
+        setup.setOnClickListener(this);
         grid_test = (GridView)rootView.findViewById(R.id.grid_test);
         horizontall = (HorizontalListView)rootView.findViewById(R.id.horizontall);
         iGetDataPresenterCompl = new IGetDataPresenterCompl(ProductFragment.this,getActivity());
+        IntentFilter filter = new IntentFilter("order");
+        getActivity().registerReceiver(broadcastreceiver, filter);
     }
-//   public String getdata(){
-//       gridlist = new ArrayList<>();
-//       Random random = new Random();
-//       int a=random.nextInt(10);
-//       for(int i =0;i<20;i++){
-//           MenuBean  menuBean = new MenuBean();
-//           menuBean.setRemark(1);
-//           menuBean.setName("辣椒炒肉"+a);
-//           menuBean.setImg("http%3A%2F%2Fali.xinshipu.cn%2F20120703%2Foriginal%2F1341323816178.jpg");
-//           menuBean.setMoneny(20.00+a);
-//           gridlist.add(menuBean);
-//       }
-//       return gridlist.toString();
-//   }
-//   public String gethordata(){
-//
-//       Hor_list = new ArrayList<>();
-//       for(int i = 0;i<10;i++){
-//           Random random = new Random();
-//           int a=random.nextInt(10);
-//           Hor_list.add("湘菜"+a);
-//       }
-//       return Hor_list.toString();
-//   }
     @Override
     public void onClick(View v) {
-
-    }
-
-    public void refreshData(){
-
-    }
-    public static void setListViewHeightBasedOnChildren(GridView listView) {
-        // 获取listview的adapter
-        ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null) {
-            return;
+        switch (v.getId()){
+            case R.id.btn_Linear:
+                showPasswordSetDailog();
+                break;
+            case R.id.btn_0:
+                add("0");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_1:
+                add("1");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_2:
+                add("2");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_3:
+                add("3");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_4:
+                add("4");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_5:
+                add("5");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_6:
+                add("6");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_7:
+                add("7");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_8:
+                add("8");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_9:
+                add("9");
+                changeAnim(v,1);
+                break;
+            case R.id.btn_set:
+                set();
+                changeAnim(v,1);
+                break;
+            case R.id.btn_commit:
+                commit();
+                break;
+            case R.id.setup:
+                ToastUtil.showCustomToast("This id set UP");
+            break;
         }
-        // 固定列宽，有多少列
-        int col = 6;// listView.getNumColumns();
-        int totalHeight = 0;
-        // i每次加4，相当于listAdapter.getCount()小于等于4时 循环一次，计算一次item的高度，
-        // listAdapter.getCount()小于等于8时计算两次高度相加
-        for (int i = 0; i < listAdapter.getCount(); i += col) {
-            // 获取listview的每一个item
-            View listItem = listAdapter.getView(i, null, listView);
-            listItem.measure(0, 0);
-            // 获取item的高度和
-            totalHeight += listItem.getMeasuredHeight();
-        }
-
-        // 获取listview的布局参数
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-        // 设置高度
-        params.height = totalHeight;
-        // 设置margin
-        ((ViewGroup.MarginLayoutParams) params).setMargins(10, 10, 10, 10);
-        // 设置参数
-        listView.setLayoutParams(params);
     }
+
 
     @Override
     public void onGetDataResult(Boolean result, int code, List<MenuBean> pare) {
@@ -247,4 +262,139 @@ public class ProductFragment extends BaseFragment implements IProductView{
             Toast.makeText(getActivity(), "数据获取失败" + code, Toast.LENGTH_SHORT).show();
         }
     }
+    private int state;
+    TextView number;
+    Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn_set,btn_commit;
+    ImageView black;
+
+    private void showPasswordSetDailog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        final AlertDialog dialog = builder.create();
+           dialog.setCancelable(false);
+        View view = View.inflate(getContext(), R.layout.pop_number, null);
+        // dialog.setView(view);// 将自定义的布局文件设置给dialog
+        dialog.setView(view, 0, 0, 0, 0);// 设置边距为0,保证在2.x的版本上运行没问题
+        btn0 = (Button)view.findViewById(R.id.btn_0);
+        btn1 = (Button)view.findViewById(R.id.btn_1);
+        btn2 = (Button)view.findViewById(R.id.btn_2);
+        btn3 = (Button)view.findViewById(R.id.btn_3);
+        btn4 = (Button)view.findViewById(R.id.btn_4);
+        btn5 = (Button)view.findViewById(R.id.btn_5);
+        btn6 = (Button)view.findViewById(R.id.btn_6);
+        btn7 = (Button)view.findViewById(R.id.btn_7);
+        btn8 = (Button)view.findViewById(R.id.btn_8);
+        btn9 = (Button)view.findViewById(R.id.btn_9);
+        btn_set = (Button)view.findViewById(R.id.btn_set);
+        btn_commit = (Button)view.findViewById(R.id.btn_commit);
+        number = (TextView)view.findViewById(R.id.sumnumber);
+        black = (ImageView)view.findViewById(R.id.black);
+        btn0.setOnClickListener(this);
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
+        btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
+        btn9.setOnClickListener(this);
+        btn_set.setOnClickListener(this);
+        btn_commit.setOnClickListener(this);
+        black.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        btn_commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                commit();
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+    private String sum="";
+    private void add(String i){
+        Log.e("pop=====",i);
+        sum=sum+i;
+        number.setText(sum);
+    }
+    private void set(){
+        sum = "";
+        number.setText(sum);
+    }
+    private void commit(){
+        sum = "";
+        Double summoeny=0.00;
+        for(int i =0;i<list.size();i++){
+            summoeny=summoeny +list.get(i).getSummoneny();
+        }
+    Intent intent = new Intent(getActivity(),Pay_Order_Activity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("data", list);
+        intent.putExtras(bundle);
+        intent.putExtra("summoneny",summoeny+"");
+        startActivity(intent);
+    }
+    public void changeAnim(final View view, final int count){
+        final long during = 100;
+        final float start = 1f;
+        final float end = 1f;
+        view.setBackgroundColor(getActivity().getResources().getColor(R.color.key_color));
+        final ObjectAnimator anim1 = ObjectAnimator.ofFloat(view, "alpha", start,end);
+        anim1.setDuration(during);// 动画持续时间
+        anim1.addListener(new MyListener() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                view.setBackgroundColor(getActivity().getResources().getColor(R.color.white));
+                final ObjectAnimator anim2 = ObjectAnimator.ofFloat(view, "alpha", start,end);
+                anim2.setDuration(during);// 动画持续时间
+                anim2.addListener(new MyListener(){
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        if (count<1) {
+                            changeAnim(view, count + 1);
+                        }
+                    }
+                });
+                anim2.start();
+            }
+        });
+        anim1.start();
+    }
+    class MyListener implements Animator.AnimatorListener {
+
+        @Override
+        public void onAnimationStart(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationEnd(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationCancel(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationRepeat(Animator animation) {
+
+        }
+    }
+
+    BroadcastReceiver broadcastreceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.e("Broadcast","   ======");
+            // TODO Auto-generated method stub
+            list.clear();
+            orderAdapter.setData(list);
+        }
+    };
 }

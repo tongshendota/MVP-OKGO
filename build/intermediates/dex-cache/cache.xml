@@ -65,15 +65,6 @@
         <dex dex="D:\Demo\Peralppay\app\build\intermediates\pre-dexed\release\classes_39f04f5f67f69aae728b251e90116e4f43bd1127.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\pp03\.android\build-cache\6236364b098eda59daa5fcc4d1b87f682e7caf54\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
-        <dex dex="D:\Demo\Peralppay\app\build\intermediates\pre-dexed\release\classes_0455c2cb12d23eb343fc9f3888ef1c53915e879c.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="D:\Demo\Peralppay\app\libs\lib_fastjson-1.1.34.android.jar"
         jumboMode="true"
@@ -81,6 +72,15 @@
         revision="25.0.0"
         sha1="29ee00ca4f0b78f2c1ac9d61b78b9bb3f495715c">
         <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\2\lib_fastjson-1.1.34.android_f485b4881323374c43a635170a5a43d60778c81d\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\pp03\.android\build-cache\6236364b098eda59daa5fcc4d1b87f682e7caf54\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\pre-dexed\release\classes_0455c2cb12d23eb343fc9f3888ef1c53915e879c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -99,6 +99,15 @@
         revision="25.0.0"
         sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
         <dex dex="D:\Demo\Peralppay\app\build\intermediates\pre-dexed\release\classes_728ef1a151758f5f30a149a273f3c52063198bf7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AS\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_cc88b955ca6371eb8e45dd643f985fa2bd7d73a9\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -169,7 +178,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="370a95c18e8add09ae0eff522eff90cdf6116dac">
+        sha1="09f5b49e53b47606c129065a2623d28ff64653f2">
         <dex dex="D:\Demo\Peralppay\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8c943e7584de7fc4ef25994ddd3ef7848f68ec1f\classes.dex" />
     </item>
     <item

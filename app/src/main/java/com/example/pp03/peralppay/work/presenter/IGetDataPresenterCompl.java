@@ -45,14 +45,13 @@ public class IGetDataPresenterCompl implements IGetDataPresenter {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
-
                         productView.onGetDataResult(true,200,iHorModel.getData(response.toString()));
                     }
 
                     @Override
                     public void onError(Call call, Response response, Exception e) {
                         super.onError(call, response, e);
-                        productView.onGetDataResult(true,200,iHorModel.getRestul(response.toString()));
+                        productView.onGetDataResult(false,400,iHorModel.getRestul(response.toString()));
                     }
                 });
     }

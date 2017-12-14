@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/back"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageView
+            android:id="@+id/black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/black"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_weight="0.09" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="取消"
+            android:gravity="center|left"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/text_color"
+            />
+    </LinearLayout>
+       <TextView
+           android:layout_marginTop="60dp"
+           android:layout_width="match_parent"
+           android:gravity="center"
+           android:textColor="@color/text_color"
+           android:textSize="@dimen/text_view_size"
+          android:id="@+id/summoneny"
+           android:text="现金收款: 100索币"
+           android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/dimen_40dp"
+        android:id="@+id/procket"
+        android:textStyle="bold"
+        android:text="请找零 15.00索币"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/commit"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="100dp"
+            android:background="@color/yellow"
+            android:textSize="@dimen/text_view_size"
+            android:textColor="@color/color_f9f9f9"
+            android:text="确认并继续点单"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</LinearLayout>

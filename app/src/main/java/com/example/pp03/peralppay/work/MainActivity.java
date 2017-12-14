@@ -13,11 +13,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.pp03.peralppay.R;
 import com.example.pp03.peralppay.utils.ToastUtil;
 import com.example.pp03.peralppay.work.adapter.HomeFragmentAdapter;
+
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+
     }
 
     @Override
@@ -93,8 +97,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.Mercancia) {
             changeFragment(1);
         }
+        else if(id ==R.id.setting){
+            changeFragment(2);
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
     private long mExitTime;
@@ -118,5 +126,8 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    public void menu(View v){
+        drawer.openDrawer(GravityCompat.START);
     }
 }

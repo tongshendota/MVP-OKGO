@@ -2,123 +2,184 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        >
-       <LinearLayout
-           android:layout_width="0dp"
-           android:layout_height="match_parent"
-           android:layout_weight="1"
-           android:orientation="vertical"
-           android:layout_marginRight="1dp"
-           >
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="48dp"
-              android:layout_marginLeft="10dp"
-              android:orientation="horizontal"
-              android:background="@color/color_f9f9f9"
-              >
-            <ImageView
-                android:layout_margin="5dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@mipmap/menu"
-                android:layout_gravity="center"
-                />
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="match_parent"
-                  android:text="Orden"
-                  android:layout_marginLeft="10dp"
-                  android:gravity="center"
-                  android:textColor="@color/colorAccent"
-                  android:textStyle="bold"
-                  android:textSize="16sp"
-                  />
+        android:orientation="horizontal">
 
-          </LinearLayout>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:id="@+id/top"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-       <TextView
-           android:paddingLeft="15dp"
-           android:layout_width="0dp"
-           android:layout_weight="1"
-           android:layout_height="match_parent"
-           android:gravity="center|left"
-           android:text="堂食"
-           />
-        <TextView
-            android:paddingLeft="10dp"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:gravity="center|left"
-            android:text="号牌"
-            />
-    </LinearLayout>
-    <ListView
-        android:layout_below="@+id/top"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list"
-        android:divider="@null"
-        android:layout_marginBottom="48dp"
-        android:background="@color/color_f9f9f9"
-   ></ListView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="下单"
-        android:background="@color/background"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:id="@+id/btn"
-        android:textColor="@color/white"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="10dp"
+                android:background="@color/color_f9f9f9"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:onClick="menu"
+                    android:src="@mipmap/menu" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/order"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_moneny"
+                    android:textStyle="bold" />
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="48dp"
+                   >
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:layout_gravity="center"
+                       android:src="@mipmap/setup"
+                      android:id="@+id/setup"
+                       android:layout_marginRight="10dp"
+                       android:layout_centerVertical="true"
+                       android:layout_alignParentEnd="true" />
+               </RelativeLayout>
+            </LinearLayout>
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="1px"
+               android:background="@color/gray_btn_bg_color"
+               ></View>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/top_titler"
+                    android:orientation="horizontal"
+                    android:background="@color/color_f9f9f9"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:textSize="@dimen/text_size"
+                        android:text="@string/order_name"
+                        />
+                    <TextView    android:textSize="@dimen/text_size"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/order_size"
+                        />
+                    <TextView    android:textSize="@dimen/text_size"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/order_unit_price"
+                        />
+                    <TextView    android:textSize="@dimen/text_size"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:paddingRight="15dp"
+                        android:text="@string/order_total"
+                        />
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_titler"
+                    android:layout_marginBottom="48dp"
+                    android:background="@color/color_f9f9f9"
+                    android:divider="@null"></ListView>
+
+                <LinearLayout
+                    android:id="@+id/btn_Linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@color/yellow"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:text="@string/commit"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_moneny" />
+
+                    <TextView
+                        android:id="@+id/moneny"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_moneny" />
+                </LinearLayout>
+
+            </RelativeLayout>
 
 
-       </LinearLayout>
+        </LinearLayout>
+         <View
+             android:layout_marginTop="48dp"
+             android:layout_width="1px"
+             android:layout_height="match_parent"
+             android:background="@color/gray_btn_bg_color"
+             ></View>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:background="@color/background"
-            android:orientation="vertical"
-            >
+            android:background="@color/color_f9f9f9"
+            android:orientation="vertical">
+
             <com.example.pp03.peralppay.utils.view.HorizontalListView
+                android:id="@+id/horizontall"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:id="@+id/horizontall"
-                android:divider="@color/white"
-                android:dividerHeight="1px"
-                >
+                android:divider="@color/black"
+                android:background="@color/color_f9f9f9"
+                android:dividerHeight="1px">
 
             </com.example.pp03.peralppay.utils.view.HorizontalListView>
+
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                ></View>
+                android:layout_height="1px"
+                android:background="@color/gray_btn_bg_color"></View>
             <GridView
+                android:layout_marginTop="10dp"
                 android:id="@+id/grid_test"
-                android:numColumns="5"
-                android:horizontalSpacing="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </GridView>
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="10px"
+                android:verticalSpacing="5px"
+                android:numColumns="4"></GridView>
         </LinearLayout>
     </LinearLayout>
 

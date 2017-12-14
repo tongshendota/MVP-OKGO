@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.pp03.peralppay.work.fragment.OrderFragment;
 import com.example.pp03.peralppay.work.fragment.ProductFragment;
+import com.example.pp03.peralppay.work.fragment.SettingFragment;
 
 /**
  * Created by meixx on 2017/3/25.
@@ -33,6 +34,8 @@ public class HomeFragmentAdapter extends FragmentPagerAdapter {
                 return new ProductFragment();
             case 1:
                 return new OrderFragment();
+            case 2:
+                return new SettingFragment();
             default:
                 return null;
         }
