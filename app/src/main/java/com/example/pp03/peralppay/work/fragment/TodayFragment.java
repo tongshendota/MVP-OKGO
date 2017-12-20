@@ -1,8 +1,10 @@
 package com.example.pp03.peralppay.work.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import com.example.pp03.peralppay.R;
 import com.example.pp03.peralppay.utils.DateUtil;
 import com.example.pp03.peralppay.utils.Url;
 import com.example.pp03.peralppay.work.Bean.OrdenBean;
+import com.example.pp03.peralppay.work.OrderDetails_Activity;
 import com.example.pp03.peralppay.work.adapter.orden_adapter;
 import com.example.pp03.peralppay.work.presenter.IOrdenPresenterCompl;
 
@@ -60,6 +63,13 @@ public class TodayFragment extends BaseFragment implements ITodayView{
         iOrdenPresenterCompl = new IOrdenPresenterCompl(TodayFragment.this,getActivity());
         iOrdenPresenterCompl.getData(Url.get_getDrawList());
         today.setText(DateUtil.StringData());
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), OrderDetails_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

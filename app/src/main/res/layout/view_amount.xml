@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/btn_amount"
-        android:gravity="center"
+        android:gravity="center" android:focusableInTouchMode="true"
         android:text="-" />
 
     <EditText
@@ -36,4 +36,5 @@
         android:gravity="center"
         android:background="@drawable/btn_amount"
         android:text="+"/>
+
 </LinearLayout>

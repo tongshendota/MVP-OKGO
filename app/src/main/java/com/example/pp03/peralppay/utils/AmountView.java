@@ -26,7 +26,7 @@ public class AmountView extends LinearLayout implements View.OnClickListener, Te
 
     private static final String TAG = "AmountView";
     private int amount = 1; //购买数量
-    private int goods_storage = 1; //商品库存
+    private int goods_storage = 50; //商品库存
 
     private OnAmountChangeListener mListener;
 
@@ -47,6 +47,7 @@ public class AmountView extends LinearLayout implements View.OnClickListener, Te
         btnIncrease = (Button) findViewById(R.id.btnIncrease);
         btnDecrease.setOnClickListener(this);
         btnIncrease.setOnClickListener(this);
+
         etAmount.addTextChangedListener(this);
 
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attrs, R.styleable.AmountView);// LayoutParams.WRAP_CONTENT
@@ -75,6 +76,9 @@ public class AmountView extends LinearLayout implements View.OnClickListener, Te
     public void setAmount(int amount) {
         this.amount = amount;
         etAmount.setText(amount+"");
+    }
+    public int getAmount(){
+        return Integer.valueOf(etAmount.getText().toString());
     }
     public void setOnAmountChangeListener(OnAmountChangeListener onAmountChangeListener) {
         this.mListener = onAmountChangeListener;

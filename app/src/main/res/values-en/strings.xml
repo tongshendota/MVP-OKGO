@@ -48,7 +48,7 @@
     <string name="cable_dollars">Cable Dollars</string>
     <string name="please_change">Please Change: </string>
     <string name="confirm_and_continue_the_order">Confirm and continue the order</string>
-    <string name="receivables">Receivables</string>
+    <string name="receivables">Receivables: </string>
     <string name="Chinese">Chinese</string>
     <string name="English">English</string>
     <string name="today">Today</string>
@@ -61,4 +61,20 @@
     <string name="mode">Mode</string>
     <string name="state">State</string>
     <string name="sum">Sum</string>
+    <string name="specifications">Specifications</string>
+    <string name="flavor">Flavor</string>
+    <string name="payment_success">Payment success</string>
+    <string name="no_default">No(default)</string>
+    <string name="pack">Pack</string>
+    <string name="emptying_the_selected_goods">Emptying the selected goods</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="takeaway">Takeaway</string>
+    <string name="for_here">For here</string>
+    <string name="cashier">Cashier</string>
+    <string name="odd_numbers">Odd Numbers</string>
+    <string name="company">Company</string>
+    <string name="type">Type</string>
+    <string name="reprint">Reprint</string>
+    <string name="detailed">Detailed</string>
+    <string name="return_goods">Return goods>></string>
 </resources>

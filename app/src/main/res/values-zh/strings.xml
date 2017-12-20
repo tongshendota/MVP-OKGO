@@ -48,7 +48,7 @@
     <string name="cable_dollars">索币</string>
     <string name="please_change">请找零: </string>
     <string name="confirm_and_continue_the_order">确认并继续点单</string>
-    <string name="receivables">收款</string>
+    <string name="receivables">收款: </string>
     <string name="Chinese">中文</string>
     <string name="English">英文</string>
     <string name="today">今日</string>
@@ -61,4 +61,20 @@
     <string name="mode">方式</string>
     <string name="state">状态</string>
     <string name="sum">总额</string>
+    <string name="specifications">规格</string>
+    <string name="flavor">口味</string>
+    <string name="payment_success">支付成功</string>
+    <string name="no_default">无(默认)</string>
+    <string name="pack">打包</string>
+    <string name="emptying_the_selected_goods">清空已选商品</string>
+    <string name="bluetooth">设置打印机</string>
+    <string name="takeaway">外卖</string>
+    <string name="for_here">堂食</string>
+    <string name="cashier">收银员</string>
+    <string name="odd_numbers">单号</string>
+    <string name="company">单位</string>
+    <string name="type">类型</string>
+    <string name="reprint">重新打印</string>
+    <string name="detailed">明细</string>
+    <string name="return_goods">退货>></string>
 </resources>

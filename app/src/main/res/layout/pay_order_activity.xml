@@ -130,6 +130,7 @@
                           android:gravity="center|right"
                           android:paddingRight="15dp"
                           android:textSize="@dimen/text_minsize"
+                          android:id="@+id/order_type"
                           />
                   </LinearLayout>
                     <LinearLayout
@@ -156,6 +157,7 @@
                             android:gravity="center|right"
                             android:paddingRight="15dp"
                             android:textSize="@dimen/text_minsize"
+                            android:id="@+id/num_sum"
                             />
                     </LinearLayout>
                     <View
@@ -418,6 +420,7 @@
                   android:gravity="center|left"
                   android:paddingLeft="10dp"
                   android:textSize="@dimen/text_view_size"
+                  android:focusable="false"
                   android:textColor="@color/text_color"
                   android:textStyle="bold"
                   android:text=""
@@ -428,6 +431,7 @@
                   android:layout_weight="1"
                   android:background="@drawable/commit_shape"
                   android:text="@string/commit"
+                  android:focusable="false"
                   android:id="@+id/pro_commit"
                   android:textColor="@color/color_f9f9f9"
                   android:textSize="@dimen/text_view_size"

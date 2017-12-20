@@ -45,18 +45,20 @@
         android:textStyle="bold"
         android:text="请找零 15.00索币"
         android:layout_height="wrap_content" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <Button
             android:id="@+id/commit"
             android:layout_width="240dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="100dp"
             android:background="@color/yellow"
-            android:textSize="@dimen/text_view_size"
-            android:textColor="@color/color_f9f9f9"
             android:text="确认并继续点单"
+            android:textColor="@color/color_f9f9f9"
+            android:textSize="@dimen/text_view_size"
+            android:focusable="false"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>

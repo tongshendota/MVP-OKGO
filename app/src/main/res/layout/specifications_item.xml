@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/back"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ImageView
+            android:id="@+id/black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/black"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_weight="0.09" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="取消"
+            android:gravity="center|left"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/text_color"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:gravity="center|left"
+        android:paddingLeft="25dp"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_view_size"
+        android:id="@+id/summoneny"
+        android:text="@string/size"
+        android:layout_height="wrap_content" />
+
+    <com.example.pp03.peralppay.utils.AmountView
+        android:id="@+id/amount_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        app:btnTextSize="14sp"
+        app:btnWidth="120dp"
+        app:tvWidth="120dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/specifications"
+        >
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:gravity="center|left"
+            android:paddingLeft="25dp"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_view_size"
+            android:text="@string/specifications"
+            android:layout_height="wrap_content" />
+        <com.example.pp03.peralppay.utils.view.HorizontalListView
+            android:layout_marginTop="5dp"
+            android:id="@+id/horizontall"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="25dp"
+            android:divider="@color/black"
+            android:background="@color/color_f9f9f9"
+            android:dividerHeight="1px">
+
+        </com.example.pp03.peralppay.utils.view.HorizontalListView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/flavor"
+        >
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:gravity="center|left"
+            android:paddingLeft="25dp"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_view_size"
+            android:text="@string/flavor"
+            android:layout_height="wrap_content" />
+        <com.example.pp03.peralppay.utils.view.HorizontalListView
+            android:layout_marginTop="5dp"
+            android:id="@+id/flavorhorizontall"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="25dp"
+            android:divider="@color/black"
+            android:background="@color/color_f9f9f9"
+            android:dividerHeight="1px">
+
+        </com.example.pp03.peralppay.utils.view.HorizontalListView>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/commit"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+
+            android:background="@color/yellow"
+            android:text="@string/commit"
+            android:textColor="@color/color_f9f9f9"
+            android:textSize="@dimen/text_view_size"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</LinearLayout>

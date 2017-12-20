@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.pp03.peralppay.Bluetooth.PrintActivity;
 import com.example.pp03.peralppay.R;
 import com.example.pp03.peralppay.utils.LocaleUtils;
 import com.example.pp03.peralppay.work.MainActivity;
@@ -20,6 +21,7 @@ import java.util.Locale;
 public class SettingFragment extends BaseFragment{
     TextView en;
     TextView cn;
+    TextView bluetooth;
     @Override
     public void initData() {
 
@@ -34,8 +36,10 @@ public class SettingFragment extends BaseFragment{
     public void initUI() {
          en =(TextView) rootView.findViewById(R.id.en);
          cn =(TextView) rootView.findViewById(R.id.cn);
+        bluetooth = (TextView)rootView.findViewById(R.id.bluetooth);
         cn.setOnClickListener(this);
         en.setOnClickListener(this);
+        bluetooth.setOnClickListener(this);
     }
 
     @Override
@@ -55,7 +59,10 @@ public class SettingFragment extends BaseFragment{
                  }
 
                  break;
-
+             case R.id.bluetooth:
+                 Intent intent = new Intent(getActivity(),PrintActivity.class);
+                 startActivity(intent);
+                 break;
          }
     }
 private void restartAct(){
@@ -68,4 +75,6 @@ private void restartAct(){
     //清除Activity退出和进入的动画
     mActivity.overridePendingTransition(0,0);
 }
+
+
 }

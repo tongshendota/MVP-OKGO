@@ -48,7 +48,7 @@ public class GlideUtils {
         if (TextUtils.isEmpty(url)) {
             return;
         }
-        Glide.with(context).load(url)// 加载图片
+        Glide.with(context).load(new GlideImage(url))// 加载图片
                 .error(errorimg)// 设置错误图片
                 .crossFade()// 设置淡入淡出效果，默认300ms，可以传参
                 .placeholder(errorimg)// 设置占位图

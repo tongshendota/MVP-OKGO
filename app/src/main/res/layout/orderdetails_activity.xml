@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="10dp"
+                android:background="@color/color_f9f9f9"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:onClick="menu"
+                    android:id="@+id/black"
+                    android:src="@mipmap/black" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    >
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_btn_bg_color"
+                ></View>
+
+            <RelativeLayout
+
+                android:background="@color/color_f9f9f9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/reprint"
+                    android:gravity="center"
+                    android:background="@drawable/text_shape_yes"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_view_size"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true" />
+                <LinearLayout
+                    android:id="@+id/orde"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="60dp"
+                    >
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/cashier"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/cashier"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/odd_numbers"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/odd_number"
+                            />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/gray_btn_bg_color"
+                        ></View>
+                    <LinearLayout    android:textColor="@color/text_color"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/time"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/time"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/num"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/num"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/order"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/order"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/company"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/company"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/type"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/type"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/taxation"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/taxation"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/additional"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/additional"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/total"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/total"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:text="@string/paid"
+                            android:textSize="@dimen/text_size"
+                            />
+                        <TextView    android:textColor="@color/text_color"
+                            android:paddingLeft="15dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="堂食"
+                            android:gravity="center|right"
+                            android:paddingRight="15dp"
+                            android:textSize="@dimen/text_size"
+                            android:id="@+id/paid"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="48dp"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/gray_btn_bg_color"
+            ></View>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/color_f9f9f9"
+            android:orientation="vertical">
+
+            <TextView    android:textColor="@color/text_color"
+                android:background="@color/color_f9f9f9"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center|left"
+                android:paddingLeft="15dp"
+                android:text=""
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_btn_bg_color"></View>
+         <TextView    android:textColor="@color/text_color"
+             android:background="@color/color_f9f9f9"
+             android:layout_width="match_parent"
+             android:layout_height="30dp"
+             android:text="@string/detailed"
+             android:paddingLeft="15dp"
+             android:gravity="center|left"
+             android:textSize="@dimen/text_size"
+             android:layout_marginTop="20dp"
+             />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/top"
+                android:orientation="horizontal"
+                android:background="@color/color_f9f9f9"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+                <TextView    android:textColor="@color/text_color"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/text_size"
+                    android:text="@string/order_name"
+                    />
+                <TextView    android:textSize="@dimen/text_size"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"    android:textColor="@color/text_color"
+                    android:text="@string/order_size"
+                    />
+                <TextView    android:textSize="@dimen/text_size"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"    android:textColor="@color/text_color"
+                    android:gravity="center"
+                    android:text="@string/order_unit_price"
+                    />
+                <TextView    android:textSize="@dimen/text_size"
+                    android:layout_width="0dp"    android:textColor="@color/text_color"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:paddingRight="15dp"
+                    android:text="@string/order_total"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_btn_bg_color"
+                ></View>
+            <RelativeLayout
+                android:background="@color/color_f9f9f9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/return_goods"
+                    android:gravity="center|right"
+                    android:paddingRight="15dp"
+                    android:textColor="@color/text_color"
+                    android:background="@drawable/text_shape_yes"
+                    android:textSize="@dimen/text_view_size"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/list"
+                    android:divider="@null"
+                    android:background="@color/color_f9f9f9"
+                   android:layout_marginBottom="60dp"
+                    android:layout_alignParentStart="true"></ListView>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

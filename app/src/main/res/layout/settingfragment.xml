@@ -18,4 +18,12 @@
         android:text="@string/Chinese"
         android:gravity="center"
         />
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bluetooth"
+        android:text="@string/bluetooth"
+        android:gravity="center"
+        />
 </LinearLayout>

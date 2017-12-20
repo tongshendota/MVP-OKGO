@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <RadioGroup
+       android:id="@+id/rg_mechant_type"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:layout_marginTop="60dp"
+       android:orientation="horizontal"
+       android:background="@drawable/text_shape_yes"
+       android:paddingLeft="40dp"
+       android:paddingRight="40dp"
+       android:checkedButton="@+id/radio_personer"
+       >
+      <RadioButton
+          android:id="@+id/radio_personer"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="match_parent"
+          android:button="@drawable/radiobtn_selector_1"
+          android:text="@string/no_default"
+          android:padding="10dp"
+          android:background="@null"
+          />
+      <RadioButton
+          android:id="@+id/radio_company"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="match_parent"
+          android:button="@drawable/radiobtn_selector_1"
+          android:text="@string/pack"
+          android:padding="10dp"
+          android:background="@null"
+          />
+   </RadioGroup>
+
+   <Button
+       android:id="@+id/commit"
+       android:layout_width="240dp"
+       android:layout_height="48dp"
+       android:layout_alignParentBottom="true"
+       android:layout_centerHorizontal="true"
+       android:layout_gravity="center"
+
+       android:layout_marginTop="100dp"
+       android:background="@color/background"
+       android:text="@string/emptying_the_selected_goods"
+       android:textColor="@color/color_f9f9f9"
+       android:textSize="@dimen/text_view_size" />
+</LinearLayout>

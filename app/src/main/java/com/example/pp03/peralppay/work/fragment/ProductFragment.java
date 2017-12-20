@@ -3,6 +3,7 @@ package com.example.pp03.peralppay.work.fragment;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -23,11 +25,14 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pp03.peralppay.Bluetooth.Print;
 import com.example.pp03.peralppay.R;
 import com.example.pp03.peralppay.login.LoginActivity;
+import com.example.pp03.peralppay.utils.AmountView;
 import com.example.pp03.peralppay.utils.ToastUtil;
 import com.example.pp03.peralppay.utils.Url;
 import com.example.pp03.peralppay.utils.view.HorizontalListView;
@@ -66,6 +71,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
 //    private PopupWindow pop;
     private HorizontalListView horizontall;
     private HorizontallListviewAdapter adapter;
+    private String ordertype = "";
 
     private Handler handler = new Handler(){
         @Override
@@ -109,6 +115,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
     };
     @Override
     public void initData() {
+        ordertype = "0";
         list = new ArrayList<>();
         iGetDataPresenterCompl.getHoData("");
         iGetDataPresenterCompl.getData("");
@@ -146,6 +153,14 @@ public class ProductFragment extends BaseFragment implements IProductView{
                 Message message = new Message();
                 message.what=3;
                 handler.sendMessage(message);
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showSpecificationsSetDailog(position);
+
+
             }
         });
         horizontall.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -229,7 +244,8 @@ public class ProductFragment extends BaseFragment implements IProductView{
                 commit();
                 break;
             case R.id.setup:
-                ToastUtil.showCustomToast("This id set UP");
+                showPackDailog();
+
             break;
         }
     }
@@ -315,6 +331,84 @@ public class ProductFragment extends BaseFragment implements IProductView{
         });
         dialog.show();
     }
+
+    private void showSpecificationsSetDailog(final int postion) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        final AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);
+        View view = View.inflate(getContext(), R.layout.specifications_item, null);
+        // dialog.setView(view);// 将自定义的布局文件设置给dialog
+        dialog.setView(view, 0, 0, 0, 0);// 设置边距为0,保证在2.x的版本上运行没问题
+        Button   btn_commit = (Button)view.findViewById(R.id.commit);
+        LinearLayout back = (LinearLayout)view.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+      final   AmountView amountView = (AmountView)view.findViewById(R.id.amount_view);
+        amountView.setAmount(list.get(postion).getSize());
+        btn_commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(amountView.getAmount()==0){
+                    list.remove(postion);
+                }else {
+                    list.get(postion).setSize(amountView.getAmount());
+                    list.get(postion).setSummoneny(list.get(postion).getMoneny() * amountView.getAmount());
+                }
+                Double sum=0.00;
+                for(int i =0;i<list.size();i++){
+                    sum=sum+list.get(i).getSummoneny();
+                }
+                btn.setText("$"+sum+"");
+                    orderAdapter.setData(list);
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+    private void showPackDailog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        final AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);
+        View view = View.inflate(getContext(), R.layout.setup_dialog, null);
+        // dialog.setView(view);// 将自定义的布局文件设置给dialog
+        dialog.setView(view, 0, 0, 0, 0);// 设置边距为0,保证在2.x的版本上运行没问题
+        RadioGroup   btn_commit = (RadioGroup)view.findViewById(R.id.rg_mechant_type);
+        Button commit = (Button)view.findViewById(R.id.commit);
+        if(ordertype == "0"){
+            btn_commit.check(R.id.radio_personer);
+        }
+        if(ordertype == "1"){
+            btn_commit.check(R.id.radio_company);
+        }
+        commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.clear();
+                orderAdapter.setData(list);
+                dialog.dismiss();
+            }
+        });
+        btn_commit.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+               if(checkedId==R.id.radio_personer){
+                   ordertype = "0";
+               }
+               if(checkedId==R.id.radio_company){
+                   ordertype = "1";
+               }
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
     private String sum="";
     private void add(String i){
         Log.e("pop=====",i);
@@ -336,6 +430,8 @@ public class ProductFragment extends BaseFragment implements IProductView{
         bundle.putParcelableArrayList("data", list);
         intent.putExtras(bundle);
         intent.putExtra("summoneny",summoeny+"");
+        intent.putExtra("ordertype",ordertype);
+        intent.putExtra("sum",sum);
         startActivity(intent);
     }
     public void changeAnim(final View view, final int count){
@@ -386,7 +482,7 @@ public class ProductFragment extends BaseFragment implements IProductView{
 
         }
     }
-
+    ProgressDialog progressDialog = null;
     BroadcastReceiver broadcastreceiver = new BroadcastReceiver() {
 
         @Override
@@ -395,6 +491,10 @@ public class ProductFragment extends BaseFragment implements IProductView{
             // TODO Auto-generated method stub
             list.clear();
             orderAdapter.setData(list);
+            progressDialog = ProgressDialog.show(getContext(), "提示", "正在打印...", true);
+            Print pa = new Print(progressDialog,getContext());
+            pa.setdata("陌离这个蠢货");
+            new Print.ConnectThread().start();
         }
     };
 }
